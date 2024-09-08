@@ -41,7 +41,7 @@ jobs:
       - name: Setup Repository & Resources
         run: |
           git config --global user.name "gofaraway71" && git config --global user.email aalbatron@google.com
-          git clone --depth=1 https://github.com/albatron34000/storm_kernel_realme_mt6785 -b 14-ksu mt6785
+          git clone --depth=1 https://github.com/albatron34000/android_kernel_rui3_realme_salaa -b 14 mt6785
           cd mt6785
           curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s v0.9.5
           git clone --depth=1 https://github.com/psionicprjkt/aarch64-linux-android-4.9 arm64 && git clone --depth=1 https://github.com/psionicprjkt/arm-linux-androideabi-4.9 arm32
