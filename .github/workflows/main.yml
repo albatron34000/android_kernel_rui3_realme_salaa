@@ -41,7 +41,7 @@ jobs:
       - name: Setup Repository & Resources
         run: |
           git config --global user.name "gofaraway71" && git config --global user.email aalbatron@google.com
-          git clone --depth=1 https://github.com/albatron34000/android_kernel_rui3_realme_salaa -b 14 mt6785
+          git clone --depth=1 https://github.com/albatron34000/android_kernel_rui3_realme_salaa.git -b 14 mt6785
           cd mt6785
           curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s v0.9.5
           git clone --depth=1 https://github.com/psionicprjkt/aarch64-linux-android-4.9 arm64 && git clone --depth=1 https://github.com/psionicprjkt/arm-linux-androideabi-4.9 arm32
@@ -55,13 +55,13 @@ jobs:
       - name: Upload to Release
         uses: softprops/action-gh-release@v1
         with:
-          files: mt6785/AnyKernel/gofaraway*
-          name: psionic_salaa_KernelSU
+          files: mt6785/AnyKernel/Stormbreaker*
+          name: Stormbreaker_salaa_KernelSU
           tag_name: ${{ github.run_id }}
           body: |
             Manifest: ${{ github.event.inputs.MANIFEST_BRANCH }}
             Device: ${{ github.event.inputs.DEVICE_NAME }}
-            Target: salaa_KernelSU
+            Target: Stormbreaker_KernelSU
             Version:Android14
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
