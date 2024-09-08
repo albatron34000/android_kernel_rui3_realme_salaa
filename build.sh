@@ -37,7 +37,7 @@ then
 echo  " Failed To Compile Kernel"
 else
 echo -e " Kernel Compile Successful"
-git clone --depth=1 https://github.com/kardebayan/AnyKernel3.git AnyKernel
+git clone --depth=1 git clone --depth=1 https://github.com/albatron34000/AnyKernel3_a15.git AnyKernel
 cp out/arch/arm64/boot/Image.gz AnyKernel
 cd AnyKernel
 zip -r9 Stormbreaker-salaa-${TANGGAL}.zip *
