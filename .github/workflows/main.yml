@@ -48,7 +48,7 @@ jobs:
           wget --quiet https://android.googlesource.com/platform//prebuilts/clang/host/linux-x86/+archive/refs/heads/main/clang-r522817.tar.gz -O "clang.tar.gz"
           mkdir clang && tar -xf clang.tar.gz -C clang && rm -f clang.tar.gz
       - name: Setup Build Kernel
-        run: cd mt6785 && bash build-ksu.sh
+        run: cd mt6785 && bash build.sh
         working-directory: ${{ steps.pwd.outputs.workspace-folder }}
         
 
