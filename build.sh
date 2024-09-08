@@ -29,15 +29,20 @@ make -j$(nproc --all) O=out \
                       LD=ld.lld \
                       CONFIG_NO_ERROR_ON_MISMATCH=y
 }
-setup_kernel_release() {
-    # setup_kernel_release
-    v=$(cat version)
-    d=$(date "+%d%m%Y")
-    z="stormbreaker-kernel-salaa-$d-$v-ksu.zip"
-    wget --quiet https://psionicprjkt.my.id/assets/files/AK3-salaa.zip && unzip AK3-salaa
-    cp out/arch/arm64/boot/Image.gz-dtb AnyKernel && cd AnyKernel
-    zip -r9 "$z" *
+function zupload()
+{
+zimage=out/arch/arm64/boot/Image.gz
+if ! [ -a $zimage ];
+then
+echo  " Failed To Compile Kernel"
+else
+echo -e " Kernel Compile Successful"
+git clone --depth=1 https://github.com/kardebayan/AnyKernel3.git AnyKernel
+cp out/arch/arm64/boot/Image.gz AnyKernel
+cd AnyKernel
+zip -r9 Stormbreaker-salaa-${TANGGAL}.zip *
+cd ../
+fi
 }
-
 compile
-setup_kernel_release
+zupload
