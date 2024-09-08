@@ -55,7 +55,7 @@ jobs:
       - name: Upload to Release
         uses: softprops/action-gh-release@v1
         with:
-          files: mt6785/AnyKernel/gofaraway*
+          files: mt6785/AnyKernel/Stormbreaker*
           name: Gofaraway_salaa_KernelSU
           tag_name: ${{ github.run_id }}
           body: |
