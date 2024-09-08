@@ -55,13 +55,13 @@ jobs:
       - name: Upload to Release
         uses: softprops/action-gh-release@v1
         with:
-          files: mt6785/AnyKernel/Stormbreaker*
-          name: Stormbreaker_salaa_KernelSU
+          files: mt6785/AnyKernel/gofaraway*
+          name: psionic_salaa_KernelSU
           tag_name: ${{ github.run_id }}
           body: |
             Manifest: ${{ github.event.inputs.MANIFEST_BRANCH }}
             Device: ${{ github.event.inputs.DEVICE_NAME }}
-            Target: Stormbreaker_KernelSU
+            Target: salaa_KernelSU
             Version:Android14
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
